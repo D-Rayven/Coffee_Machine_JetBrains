@@ -271,6 +271,140 @@ files:
         }
     }
   learner_created: false
+- name: src/machine/CoffeeMachine.java
+  visible: true
+  text: |
+    package machine;
+
+    import java.util.Scanner;
+    import static java.lang.System.*;
+
+    public class CoffeeMachine {
+        public static void main(String[] args) {
+
+            Scanner scanner = new Scanner(in);
+
+            /*out.println("Starting to make a coffee");
+            out.println("Grinding coffee beans");
+            out.println("Boiling water");
+            out.println("Mixing boiled water with crushed coffee beans");
+            out.println("Pouring coffee into the cup");
+            out.println("Pouring some milk into the cup");
+            out.println("Coffee is ready!");
+
+            out.println("Write how many cups of coffee you will need:");
+            int nbCups = scanner.nextInt();
+            out.println("For " + nbCups + " of coffee you will need:");
+            out.println(nbCups * 200 + " ml of water");
+            out.println(nbCups * 50 + " ml of milk");
+            out.println(nbCups * 15 + " g of coffee beans");*/
+
+            /*out.println("Write how many ml of water the coffee machine has:");
+            int water = scanner.nextInt();
+            out.println("Write how many ml of milk the coffee machine has:");
+            int milk = scanner.nextInt();
+            out.println("Write how many grams of coffee beans the coffee machine has:");
+            int coffeeBeans = scanner.nextInt();
+            out.println("Write how many cups of coffee you will need:");
+            int nbCups = scanner.nextInt();
+
+            int nbCupsPossible = Math.min(Math.min(water / 200, milk / 50), coffeeBeans / 15);
+
+            if (nbCups * 200 > water || nbCups * 50 > milk || nbCups * 15 > coffeeBeans) {
+                out.println("No, I can make only " + nbCupsPossible + " cup(s) of coffee");
+
+            } else if (nbCupsPossible - nbCups > 0) {
+                out.println("Yes, I can make that amount of coffee (and even " + (nbCupsPossible - nbCups) + " more than that)");
+            } else {
+                out.println("Yes, I can make that amount of coffee");
+            }*/
+
+            int water = 400;
+            int milk = 540;
+            int coffeeBeans = 120;
+            int disposableCups = 9;
+            int money = 550;
+            out.println("The coffee machine has:");
+            out.println(water + " of water");
+            out.println(milk + " of milk");
+            out.println(coffeeBeans + " of coffee beans");
+            out.println(disposableCups + " of disposable cups");
+            out.println(money + " of money");
+            out.println();
+            out.println("Write action (buy, fill, take) :");
+            String action = scanner.nextLine();
+
+            int choice = -1;
+
+            switch (action) {
+                case "buy":
+                    out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
+                    choice = scanner.nextInt();
+
+                    if (choice == 1) {
+                        water -= 250;
+                        coffeeBeans -= 16;
+                        money += 4;
+                        disposableCups -= 1;
+                    } else if (choice == 2) {
+                        water -= 350;
+                        milk -= 75;
+                        coffeeBeans -= 20;
+                        money += 7;
+                        disposableCups -= 1;
+                    } else {
+                        water -= 200;
+                        milk -= 100;
+                        coffeeBeans -= 12;
+                        money += 6;
+                        disposableCups -= 1;
+                    }
+
+                    out.println("The coffee machine has:");
+                    out.println(water + " of water");
+                    out.println(milk + " of milk");
+                    out.println(coffeeBeans + " of coffee beans");
+                    out.println(disposableCups + " of disposable cups");
+                    out.println(money + " of money");
+                    break;
+
+                case "fill":
+                    out.println("Write how many ml of water do you want to add:");
+                    int waterAdd = scanner.nextInt();
+                    out.println("Write how many ml of milk do you want to add:");
+                    int milkAdd = scanner.nextInt();
+                    out.println("Write how many grams of coffee beans do you want to add:");
+                    int coffeeBeansAdd = scanner.nextInt();
+                    out.println("Write how many disposable cups of coffee do you want to add:");
+                    int cupsAdd = scanner.nextInt();
+                    water += waterAdd;
+                    milk += milkAdd;
+                    coffeeBeans += coffeeBeansAdd;
+                    disposableCups += cupsAdd;
+                    out.println();
+                    out.println("The coffee machine has:");
+                    out.println(water + " of water");
+                    out.println(milk + " of milk");
+                    out.println(coffeeBeans + " of coffee beans");
+                    out.println(disposableCups + " of disposable cups");
+                    out.println(money + " of money");
+                    break;
+
+                case "take":
+                    out.println("I gave you $" + money);
+                    money -= money;
+                    out.println();
+                    out.println("The coffee machine has:");
+                    out.println(water + " of water");
+                    out.println(milk + " of milk");
+                    out.println(coffeeBeans + " of coffee beans");
+                    out.println(disposableCups + " of disposable cups");
+                    out.println(money + " of money");
+                    break;
+            }
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/33/stages/179/implement
-status: Unchecked
-record: -1
+status: Failed
+record: 5

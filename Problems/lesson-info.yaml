@@ -3,3 +3,6 @@ content:
 - Printing a magic letter
 - Initializing an array of integers
 - Initializing an array of longs
+- Does an array contain N
+- Check if an array is sorted ascending
+- The longest ascending sequence

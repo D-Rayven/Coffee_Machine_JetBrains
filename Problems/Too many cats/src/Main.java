@@ -14,7 +14,7 @@ class Cat {
             this.name = name;
             this.age = age;
         }
-        this.counter++;
+        this.counter++; 
     }
 
     public static int getNumberOfCats() {

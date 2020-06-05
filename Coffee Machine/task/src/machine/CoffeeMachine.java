@@ -4,10 +4,6 @@ import java.util.Scanner;
 import static java.lang.System.*;
 
 public class CoffeeMachine {
-    
-    public static void CoffeeMachine(int water, int milk, int coffeeBeans, int cups, int money) {
-        
-    }
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(in);
